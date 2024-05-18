@@ -10,4 +10,5 @@ body {
   color: #fff;
   background: #9ea29f;
   font-weight: 400;
+  overflow-x: hidden;
 }
