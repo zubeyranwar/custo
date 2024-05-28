@@ -3,11 +3,9 @@ import "./globals.css";
 import Navbar from "./Navbar";
 import "swiper/swiper-bundle.css";
 
+import localFont from "next/font/local";
 
-import localFont from 'next/font/local';
- 
-const myFont = localFont({ src: './PPNeueMontreal-Medium.woff2' })
-
+const myFont = localFont({ src: "./PPNeueMontreal-Medium.woff2" });
 
 export const metadata: Metadata = {
   title: "Custo",
@@ -21,7 +19,7 @@ export default function RootLayout({
 }) {
   return (
     <html lang="en">
-      <body className={myFont.className}>
+      <body className={`${myFont.className} antialiased`}>
         <Navbar />
         {children}
       </body>

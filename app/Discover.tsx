@@ -6,7 +6,7 @@ import Carousal from "./components/Carousal";
 
 function Discover() {
   return (
-    <div className="relative lg:container max-w-[1355px] text-[#222] bg-white min-h-[150vh] overflow-hidden mx-auto pt-[56px] pb-9 lg:px-16 px-16">
+    <div className="relative lg:container max-w-[1355px] text-[#222] bg-white min-h-[120vh] overflow-hidden mx-auto pt-[56px] pb-9 lg:px-16 px-16">
       <div className="flex flex-col md:flex-row justify-between">
         <div className="md:w-1/4 mb-9">
           <h3 className="text-xl ">
