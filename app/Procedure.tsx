@@ -28,7 +28,8 @@ export default function Procedure() {
           {data.map((item, index) => (
             <div
               key={index}
-              className="relative self-end w-[50%] flex gap-12 items-center px-4 py-10 border-b-2 text-[#a7aaad] cursor-pointer"
+              style={{ color: item.opacity == 1 ? "#222" : "#a7aaad" }}
+              className="relative self-end w-[50%] flex gap-12 items-center px-4 py-10 border-b-2 cursor-pointer transition-all duration-300"
               onClick={() => handleClick(index)}
             >
               <Image
