@@ -3,16 +3,35 @@
 import Image from "next/image";
 import custo from "/public/custo-hero.png";
 import { motion } from "framer-motion";
-import ParallaxObject from "./Parallax";
+import { useEffect, useRef } from "react";
+import useLenis from "../hooks/useLenis";
 
 function HeroImage() {
+  useLenis();
+  const container = useRef<HTMLDivElement>(null);
+  useEffect(() => {
+    const handleScroll = () => {
+      const scrollPosition = window.scrollY;
+      if (container.current) {
+        container.current.style.transform = `translateY(${
+          scrollPosition * 0.3
+        }px)`;
+      }
+
+      window.addEventListener("scroll", handleScroll);
+      return () => {
+        window.removeEventListener("scroll", handleScroll);
+      };
+    };
+  }, []);
+
   const animate = {
     initial: {
-      y: 100,
+      y: 120,
       opacity: 0,
     },
     show: {
-      y: 0,
+      y: -120,
       opacity: 1,
       transition: {
         delay: 0.4,
@@ -22,22 +41,21 @@ function HeroImage() {
     },
   };
   return (
-    <ParallaxObject dataRatio={0.4}>
-      <motion.div
-        initial="initial"
-        whileInView="show"
-        variants={animate}
-        viewport={{ once: true }}
-      >
-        <Image
-          src={custo}
-          alt="custo image"
-          width={592}
-          height={1234}
-          className="object-cover absolute top-[50%] left-[50%] translate-x-[-50%] translate-y-[-10%] -z-[1000]"
-        />
-      </motion.div>
-    </ParallaxObject>
+    <motion.div
+      initial="initial"
+      whileInView="show"
+      variants={animate}
+      viewport={{ once: true }}
+      ref={container}
+    >
+      <Image
+        src={custo}
+        alt="custo image"
+        width={592}
+        height={1234}
+        className="object-cover absolute  left-[50%] translate-x-[-50%]  -z-[1000]"
+      />
+    </motion.div>
   );
 }
 

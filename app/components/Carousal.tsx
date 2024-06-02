@@ -6,7 +6,6 @@ import Image from "next/image";
 import slider3 from "../../public/home2.jpg";
 import slider1 from "../../public/slider1.jpg";
 import slider2 from "../../public/slider2.jpg";
-import ParallaxObject from "./Parallax";
 
 function Carousal() {
   const images = [slider1, slider2, slider3];

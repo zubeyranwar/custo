@@ -26,18 +26,22 @@ export const procedures = [
   {
     title: "Order online, as much as you want.",
     image: step1,
+    opacity: 0,
   },
   {
     title: "Get all the information in the app.",
     image: step2,
+    opacity: 0,
   },
   {
     title: "Get notified of your delivery.",
     image: step3,
+    opacity: 0,
   },
   {
     title: "Enjoy worryfree deliveries.",
     image: step4,
+    opacity: 0,
   },
 ];
 
